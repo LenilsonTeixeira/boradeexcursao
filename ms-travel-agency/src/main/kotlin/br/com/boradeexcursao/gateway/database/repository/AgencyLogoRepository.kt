@@ -9,6 +9,6 @@ interface AgencyLogoRepository : MongoRepository<AgencyLogoEntity, String> {
 
     fun deleteByAgencyId(agencyId: String)
 
-    fun findAllByAgencyId(agencyId: String) : List<AgencyLogoEntity>
+    fun findByAgencyId(agencyId: String) : AgencyLogoEntity?
 
 }

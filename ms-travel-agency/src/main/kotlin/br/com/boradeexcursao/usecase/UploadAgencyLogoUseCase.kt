@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile
 class UploadAgencyLogoUseCase(private val saveAgencyLogoUseCase: SaveAgencyLogoUseCase, private val deleteAgencyLogoUseCase: DeleteAgencyLogoUseCase) {
 
     @Value("\${storage.agency.logo.path}")
-    private val UPLOAD_DIR = "."
+    private val uploadDir = "."
 
     fun execute(uploadAgencyLogoDomain: UploadAgencyLogoDomain) : UploadedAgencyLogoDomain {
 
@@ -27,7 +27,7 @@ class UploadAgencyLogoUseCase(private val saveAgencyLogoUseCase: SaveAgencyLogoU
 
         val fileName = normalizeFilePath(uploadAgencyLogoDomain.logo)
 
-        val path: Path = Paths.get(UPLOAD_DIR + getDefault().separator + fileName)
+        val path: Path = Paths.get(uploadDir + getDefault().separator + fileName)
 
         try {
 

@@ -4,6 +4,6 @@ import br.com.boradeexcursao.domain.RetrievedAgencyLogoDomain
 
 interface GetAgencyLogoGateway {
 
-    fun findAllByAgencyId(agencyId: String) : List<RetrievedAgencyLogoDomain>
+    fun findByAgencyId(agencyId: String) : RetrievedAgencyLogoDomain?
 
 }

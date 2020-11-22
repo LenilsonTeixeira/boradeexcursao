@@ -7,7 +7,7 @@ object AgencyLogoEntityToRetrievedAgencyLogoDomainTranslator {
 
     fun translate(agencyLogoEntity: AgencyLogoEntity) : RetrievedAgencyLogoDomain {
 
-        return RetrievedAgencyLogoDomain(agencyLogoEntity.agencyId, agencyLogoEntity.url)
+        return RetrievedAgencyLogoDomain(agencyLogoEntity.agencyId!!, agencyLogoEntity.url!!)
 
     }
 }

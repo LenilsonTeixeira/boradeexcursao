@@ -2,3 +2,10 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
+storage:
+  agency:
+    logo:
+      path: /home/lenilson/Documents/storage/boradeexcursao/uploads/images/logos
+  travel:
+    image:
+      path: /home/lenilson/Documents/storage/boradeexcursao/uploads/images/travels

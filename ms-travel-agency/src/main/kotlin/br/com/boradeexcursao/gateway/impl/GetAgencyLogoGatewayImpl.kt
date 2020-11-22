@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service
 @Service("getAgencyLogoGatewayImpl")
 class GetAgencyLogoGatewayImpl(private val agencyLogoRepository: AgencyLogoRepository) : GetAgencyLogoGateway {
 
-    override fun findAllByAgencyId(agencyId: String): List<RetrievedAgencyLogoDomain> {
+    override fun findByAgencyId(agencyId: String): RetrievedAgencyLogoDomain? {
 
-        return agencyLogoRepository.findAllByAgencyId(agencyId).map { AgencyLogoEntityToRetrievedAgencyLogoDomainTranslator.translate(it) }
+        return agencyLogoRepository.findByAgencyId(agencyId)?.let { AgencyLogoEntityToRetrievedAgencyLogoDomainTranslator.translate(it) }
 
     }
 }

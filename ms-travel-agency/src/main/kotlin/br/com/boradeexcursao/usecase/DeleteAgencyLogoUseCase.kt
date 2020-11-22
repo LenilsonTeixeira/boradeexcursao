@@ -10,11 +10,11 @@ class DeleteAgencyLogoUseCase(private val getAgencyLogoUseCase: GetAgencyLogoUse
 
     fun execute(agencyId: String) {
 
-        val logos = getAgencyLogoUseCase.execute(agencyId)
+        val logo = getAgencyLogoUseCase.execute(agencyId)
 
-        if(logos.isNotEmpty()) {
+        if(logo.isPresent) {
 
-            fromLocalStorage(logos)
+            fromLocalStorage(logo.get())
 
             fromDatabase(agencyId)
 
@@ -26,9 +26,9 @@ class DeleteAgencyLogoUseCase(private val getAgencyLogoUseCase: GetAgencyLogoUse
         deleteAgencyLogoGateway.deleteByAgencyId(agencyId)
     }
 
-    private fun fromLocalStorage(logos: List<RetrievedAgencyLogoDomain>) {
+    private fun fromLocalStorage(logo: RetrievedAgencyLogoDomain) {
 
-        logos.forEach { File(it.url).delete() }
+        File(logo.url).delete()
 
     }
 }
