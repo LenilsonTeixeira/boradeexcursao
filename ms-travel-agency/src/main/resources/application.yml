@@ -16,3 +16,11 @@ management:
     web:
       exposure:
         include: health, info, prometheus
+
+storage:
+  agency:
+    logo:
+      path: /home/lenilson/Documents/storage/boradeexcursao/uploads/images/logos
+  travel:
+    image:
+      path: /home/lenilson/Documents/storage/boradeexcursao/uploads/images/travels

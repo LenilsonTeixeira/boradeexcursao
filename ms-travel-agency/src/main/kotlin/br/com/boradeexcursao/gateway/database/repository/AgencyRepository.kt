@@ -10,6 +10,4 @@ interface AgencyRepository : MongoRepository<AgencyEntity, String> {
 
     fun findByUuid(uuid: String) : Optional<AgencyEntity>
 
-    fun findByName(name: String) : Optional<AgencyEntity>
-
 }
