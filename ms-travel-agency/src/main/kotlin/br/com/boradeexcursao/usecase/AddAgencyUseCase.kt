@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 @Component
-class AddAgencyUseCase(val addAgencyGateway: AddAgencyGateway) {
+class AddAgencyUseCase(private val addAgencyGateway: AddAgencyGateway) {
 
     fun execute(addAgencyDomain: AddAgencyDomain): AddedAgencyDomain {
 

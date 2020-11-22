@@ -9,7 +9,7 @@ import br.com.boradeexcursao.usecase.AddAgencyUseCase
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class AddAgencyController(val addAgencyUseCase: AddAgencyUseCase) : AddAgencyApi {
+class AddAgencyController(private val addAgencyUseCase: AddAgencyUseCase) : AddAgencyApi {
 
     override fun add(addAgencyRequest: AddAgencyRequest): AddedAgencyResponse {
 

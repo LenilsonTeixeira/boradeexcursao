@@ -6,4 +6,5 @@ import br.com.boradeexcursao.domain.AddedAgencyDomain
 interface AddAgencyGateway {
 
     fun add(addAgencyDomain: AddAgencyDomain) : AddedAgencyDomain
+
 }

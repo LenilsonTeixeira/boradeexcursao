@@ -1,11 +1,7 @@
 package br.com.boradeexcursao
 
-import br.com.boradeexcursao.gateway.database.repository.AgencyRepository
-import br.com.boradeexcursao.mongodb.EmbeddedMongoDB
 import br.com.boradeexcursao.usecase.AddAgencyUseCase
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,28 +15,14 @@ class AddAgencyUseCaseTest() : BaseTest() {
     @Autowired
     lateinit var addAgencyUseCase: AddAgencyUseCase
 
-    @Autowired
-    lateinit var agencyRepository: AgencyRepository
-
-    @BeforeEach
-    fun setUp() {
-        EmbeddedMongoDB.start();
-    }
-
-    @AfterEach
-    fun clear() {
-        agencyRepository.deleteAll()
-        EmbeddedMongoDB.stop()
-    }
-
     @Test
     fun addAgency() {
 
-        val agencyDomain = create("Bora Viajar")
+        val agencyDomain = buildAgency("Bora Viajar","26.109434.10.0001-8","25.272.207/0001-26")
 
         val addedAgencyDomain = addAgencyUseCase.execute(agencyDomain)
 
-        Assertions.assertTrue(addedAgencyDomain.uuid.toString().isNotBlank())
+        Assertions.assertTrue(addedAgencyDomain.uuid.isNotBlank())
         Assertions.assertEquals(agencyDomain.name, addedAgencyDomain.name)
         Assertions.assertEquals(agencyDomain.cnpj, addedAgencyDomain.cnpj)
         Assertions.assertEquals(agencyDomain.cadastur, addedAgencyDomain.cadastur)
