@@ -15,7 +15,7 @@ import org.springframework.util.Assert
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
-class UpdateAgencyUseCaseTest : BaseTest() {
+class UpdateAgencyUseCaseTest : AgencyBaseTest() {
 
     @Autowired
     lateinit var updateAgencyUseCase: UpdateAgencyUseCase

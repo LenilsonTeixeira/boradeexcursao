@@ -12,7 +12,7 @@ import org.springframework.util.Assert
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
-class GetOneAgencyUseCaseTest : BaseTest() {
+class GetOneAgencyUseCaseTest : AgencyBaseTest() {
 
     val UUID_INVALID : String = "e8e3aac9-5bf2-4d43-aa6d-48116f6941b1"
 

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.springframework.beans.factory.annotation.Autowired
 
-abstract class BaseTest {
+abstract class AgencyBaseTest {
 
     @Autowired
     lateinit var agencyRepository: AgencyRepository

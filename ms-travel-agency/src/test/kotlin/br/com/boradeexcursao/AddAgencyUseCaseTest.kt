@@ -10,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @SpringBootTest
 @ExtendWith(SpringExtension::class)
-class AddAgencyUseCaseTest() : BaseTest() {
+class AddAgencyUseCaseTest() : AgencyBaseTest() {
 
     @Autowired
     lateinit var addAgencyUseCase: AddAgencyUseCase
