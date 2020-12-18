@@ -27,6 +27,8 @@ data class AddAgencyRequest(
         @field:Size(max = 255, message = "The max owner size is 255 characters")
         val owner: String,
 
+        //LIST OWNER
+
         @field:Valid
         @field:NotNull(message = "The address is required")
         val address: AddAgencyAddressRequest,
